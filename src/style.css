@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    width: 600px;
+    margin: 1em auto;
+}
+
+.form-message{
+    DISPLAY: BLOCK;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+}
+
+.form-message input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 5px 1em;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+
+.form-message textarea{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 5px 1em;
+    box-sizing: border-box;
+    border: 1px solid #ddd
+}
+
+.form-input-empty{
+    border-color: red!important;
+}
+.form-message button{
+    padding: 2px;
+    background: #03A9F4;
+    border: 0px;
+    padding: 7px 1em;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-result{
+
+}
+
+.result-item{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.result-name{
+    display: table-cell;
+    width: 150px;
+    border: 1px solid #ddd;
+
+    padding: 2px;
+}
+
+.result-value{
+    display: table-cell;
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+.result-delete{
+    display: table-cell;
+    width: 30px;
+    background: red;
+    border: 1px solid red;
+}
