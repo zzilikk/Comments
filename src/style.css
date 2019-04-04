@@ -80,3 +80,59 @@
     background: red;
     border: 1px solid red;
 }
+
+
+.example-html{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-comments{
+    background: #0033aa;
+    color: #fff;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+}
+
+.input-comments{
+    padding: 3px;
+    width: 200px;
+    outline: none;
+}
+
+.form-comments{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    border: 2px solid #0033aa;
+    height:200px;
+}
+
+.comments-result{   
+    display: table;
+    width: 400px;
+    margin-top: 5px;
+}
+
+.result-value-comments{
+    display: flex;
+    border: 2px solid #0033aa;
+  
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    left: -2px;
+    margin-bottom: 1px;
+}
+
+.result-delete-comments{
+    display: table-cell;
+    width: 30px;
+    background: red;
+    border: 2px solid red;
+    color: #fff;
+}

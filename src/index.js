@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function(){  // Добавляем
         
         form.addEventListener("submit", function(event){    // Добавляем событие к форме
             
-            event.preventDefault(); // Что это такое?
+            event.preventDefault();   // Что это такое? Это необходимо чтобы отменить действия браузера, без этой штуки браузер бы перезагружал страницу и в итоге наши коментарии появлялись бы и сразу исчезали 
             
-            var inputName = form.querySelector('[name=name]');
+            var inputName = form.querySelector('[name=name]'); 
             var inputText = form.querySelector('[name=text]');
         
             if(inputName.value === ''){ // Если значение введенного поля пусто то добавим класс, иначе удалим
@@ -62,5 +62,45 @@ document.addEventListener('DOMContentLoaded', function(){  // Добавляем
             }
         
         });
+
+    var formComments = document.querySelector('#form-comment'),         // Выбираем селекторы
+        resultComments = document.querySelector('#result-comment');
+    
+     formComments.addEventListener("submit", function(event){  // Хотел вместо submit использовать type = button, но с ним почему-то не сработало 
+        event.preventDefault(); 
+
+        var inputComments = formComments.querySelector('[type=text]');
         
+        if(inputComments.value === ''){ 
+            inputComments.classList.add('form-input-empty');
+        }else{
+            inputComments.classList.remove('form-input-empty');
+          
+            var resultValueComments = document.createElement('li');   // я переместил код отвечающий за создание li в этот блок, потому-что эти событие должны происходить только когда форма заполнена.
+            resultValueComments.classList.add('result-value-comments');         // не вижу смысла создавать li если он будет иметь пустое значение.
+            resultValueComments.innerHTML = inputComments.value;
+
+            var resultDeleteComments = document.createElement('button'); // 
+            resultDeleteComments.classList.add('result-delete-comments');
+            resultDeleteComments.innerHTML = "X";
+
+            resultDeleteComments.addEventListener('click', function(){ // Добавляем событие к кнопке
+                if(confirm('Удалить комментарий?')){ // См. confirm
+                    resultValueComments.remove(); // удалим элемент из dom
+                    resultDeleteComments.remove(); // удалим элемент из dom
+                }
+            });
+           
+            resultValueComments.append(resultDeleteComments);
+            resultComments.append(resultValueComments);
+            
+          
+            inputComments.value = '';       
+         }
+  
+
+      
+        console.log( );
+         
+    });
 });
